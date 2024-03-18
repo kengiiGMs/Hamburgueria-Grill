@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/output.css">
     <title>Hamburgueria Grill</title>
 </head>
@@ -22,6 +25,91 @@
             </div>
         </div>
     </header>
+
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">Conheça o nosso menu</h2>
+
+    <div id="menu">
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+
+            <div class="flex gap-2">
+                <img src="./assets/hamb-1.png" alt="Hambúrguer Smash"
+                    class="w-28 h-28 rounded-t-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold">Hambúrguer Smash</p>
+                    <p class="text-sm">Pão de hambúrguer com fubá, 2 - hambúrguer de carne 130g, queijo prato,
+                        queijo mussarela, alface, tomate e maionese da casa.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$:38.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hambúrguer Smash"
+                            data-price="38.90">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <img src="./assets/hamb-2.png" alt="Hambúrguer Duplo"
+                    class="w-28 h-28 rounded-t-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold">Hambúrguer Duplo Bacon</p>
+                    <p class="text-sm">Pão de hambúrguer, 2 - hambúrguer de carne 160g, queijo cheddar e
+                        tomate.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$:32.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hambúrguer Duplo Bacon"
+                            data-price="32.90">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <img src="./assets/hamb-3.png" alt="Hambúrguer Salad"
+                    class="w-28 h-28 rounded-t-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold">Hamburguer One</p>
+                    <p class="text-sm">Pão de hambúrguer, 2 hambúrguer de carne - 120g, 2 - queijo mussarela
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$:15.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hambúrguer One"
+                            data-price="15.90">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2">
+                <img src="./assets/hamb-4.png" alt="Hambúrguer da Casa"
+                    class="w-28 h-28 rounded-t-md hover:scale-110 hover:-rotate-2 duration-300">
+                <div>
+                    <p class="font-bold">Hambúrguer da Casa</p>
+                    <p class="text-sm">Pão de hambúrguer, 1 - hambúrguer de carne - 170g, tomate, cebola, picles,
+                        alface e maionese da casa.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">R$:30.00</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer da Casa"
+                            data-price="30.00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+
+    </div>
 
 </body>
 
