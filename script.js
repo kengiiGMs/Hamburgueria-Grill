@@ -9,6 +9,10 @@ const cartItemsContainer = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
 const cartCounter = document.getElementById("cart-count");
 
+const checkoutBtn = document.getElementById("checkout-btn");
+const addressInput = document.getElementById("address");
+const addressWarn = document.getElementById("address-warn")
+
 /* Modal */
 cartBtn.addEventListener("click", function () {
     updateCartModal();
@@ -117,5 +121,23 @@ function removeitemCart(name) {
         updateCartModal();
 
     }
-
 }
+
+addressInput.addEventListener("input", function (event) {
+    let inputValue = event.target.value;
+
+    if (inputValue !== "") {
+        addressInput.classList.remove("border-red-500")
+        addressWarn.classList.add("hidden")
+    }
+
+})
+
+checkoutBtn.addEventListener("click", function () {
+    if (cart.length === 0) return;
+    if (addressInput.value === "") {
+        addressWarn.classList.remove("hidden");
+        addressInput.classList.add("border-red-500")
+        return;
+    }
+})
