@@ -13,6 +13,8 @@ const checkoutBtn = document.getElementById("checkout-btn");
 const addressInput = document.getElementById("address");
 const addressWarn = document.getElementById("address-warn")
 
+const spanItem = document.getElementById("date-span")
+
 /* Modal */
 cartBtn.addEventListener("click", function () {
     updateCartModal();
@@ -123,6 +125,7 @@ function removeitemCart(name) {
     }
 }
 
+/* Validando o Input de Endereço */
 addressInput.addEventListener("input", function (event) {
     let inputValue = event.target.value;
 
@@ -133,7 +136,15 @@ addressInput.addEventListener("input", function (event) {
 
 })
 
+/* Ações para finalizar o pedido */
 checkoutBtn.addEventListener("click", function () {
+
+    const isOpen = checkRestaurantOpen();
+    if (!isOpen) {
+        alert("Restaurante Fechado no Momento!")
+        return;
+    }
+
     if (cart.length === 0) return;
     if (addressInput.value === "") {
         addressWarn.classList.remove("hidden");
@@ -141,3 +152,21 @@ checkoutBtn.addEventListener("click", function () {
         return;
     }
 })
+
+/* Validando o Horário do Restaurante */
+function checkRestaurantOpen() {
+    const data = new Date();
+    const hora = data.getHours();
+    return hora >= 18 && hora < 22;
+    //se retornar true o restaurante está aberto
+}
+
+const isOpen = checkRestaurantOpen();
+
+if (isOpen) {
+    spanItem.classList.remove("bg-red-500");
+    spanItem.classList.add("bg-green-600");
+} else {
+    spanItem.classList.remove("bg-green-600");
+    spanItem.classList.add("bg-red-500");
+}
