@@ -151,6 +151,24 @@ checkoutBtn.addEventListener("click", function () {
         addressInput.classList.add("border-red-500")
         return;
     }
+
+    //Enviar o pedido para api whats
+    const cartItems = cart.map((item) => {
+        return (
+            `${item.name} Quantidade: (${item.quantity}) Preço: R$: ${item.price.toFixed(2)} |`
+        )
+    }).join("")
+
+    const message = encodeURIComponent(cartItems);
+
+    //Adicionar o número de celular
+    const phone = "";
+
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+
+    cart = [];
+    addressInput.value = "";
+    updateCartModal();
 })
 
 /* Validando o Horário do Restaurante */
